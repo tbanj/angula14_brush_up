@@ -24,7 +24,10 @@ import { AccessRoutingModule } from './access/access-routing.module';
     BrowserModule,
     AppRoutingModule,
     LoginComponent,
-    // example of standalone module below
+    /* 
+    example of standalone module below which the component
+    in the moddule will load once the project start
+    */
     AccessRoutingModule,
   ],
   providers: [],

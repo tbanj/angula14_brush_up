@@ -13,6 +13,8 @@ const routes: Routes = [
     {path: "add", component: AddcontactComponent},
     {path: "edit/:id", component: AddcontactComponent}
   ]},
+  // using lazy loading to load access Module Routes
+  {path: "access", loadChildren: ()=>import('./access/access.module').then(opt=>opt.AccessModule)}
 ];
 
 @NgModule({
