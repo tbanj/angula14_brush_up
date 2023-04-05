@@ -317,7 +317,12 @@
   <a routerLink="contact">Contact</a>
   <div class="spacer"></div>
 
-  <a routerLink="register">Register</a>
+  <!-- once you make use of lazy loading, you have to write th
+  full route part if the component is on child module -->
+  <a routerLink="access/register">Register</a>
+
+  <!-- if you make use of child module without lazyloading -->
+  <!-- <a routerLink="register">Register</a> -->
   <a
     aria-label="Angular on YouTube"
     target="_blank"
