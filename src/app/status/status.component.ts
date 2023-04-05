@@ -3,12 +3,12 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-status',
   template: `
-    <p>
+    <h4>
       status works!
-    </p>
+    </h4>
   `,
   styles: [
-    "h4{color:green}"
+    "h4{color:green; font-size: 30px}"
   ]
 })
 export class StatusComponent implements OnInit {
