@@ -9,6 +9,8 @@ export class HomeComponent implements OnInit {
 
   constructor() { }
 
+  headerName= "Welcome to Maja World"
+
   ngOnInit(): void {
   }
 
