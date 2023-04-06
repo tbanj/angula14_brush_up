@@ -7,7 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { StatusComponent } from './status/status.component';
-import { LoginComponent } from './login/login.component';
+// import { LoginComponent } from './login/login.component';
 import { AddcontactComponent } from './addcontact/addcontact.component';
 // import { AccessRoutingModule } from './access/access-routing.module';
 
@@ -23,7 +23,9 @@ import { AddcontactComponent } from './addcontact/addcontact.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    LoginComponent,
+
+    // LoginComponent is an example of standalone component
+    // LoginComponent,
     /* 
     example of standalone module below which the component
     in the moddule will load once the project start

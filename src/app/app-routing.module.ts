@@ -14,7 +14,8 @@ const routes: Routes = [
     {path: "edit/:id", component: AddcontactComponent}
   ]},
   // using lazy loading to load access Module Routes
-  {path: "access", loadChildren: ()=>import('./access/access.module').then(opt=>opt.AccessModule)}
+  {path: "access", loadChildren: ()=>import('./access/access.module').then(opt=>opt.AccessModule)},
+  {path: "login", loadComponent: ()=> import('./login/login.component').then(opt=>opt.LoginComponent)}
 ];
 
 @NgModule({
