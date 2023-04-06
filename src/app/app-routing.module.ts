@@ -4,6 +4,7 @@ import { AboutComponent } from './about/about.component';
 import { AddcontactComponent } from './addcontact/addcontact.component';
 import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
+import { StatusComponent } from './status/status.component';
 
 // routes use
 const routes: Routes = [
@@ -15,7 +16,8 @@ const routes: Routes = [
   ]},
   // using lazy loading to load access Module Routes
   {path: "access", loadChildren: ()=>import('./access/access.module').then(opt=>opt.AccessModule)},
-  {path: "login", loadComponent: ()=> import('./login/login.component').then(opt=>opt.LoginComponent)}
+  {path: "login", loadComponent: ()=> import('./login/login.component').then(opt=>opt.LoginComponent)},
+  {path: "**", component:StatusComponent}
 ];
 
 @NgModule({
