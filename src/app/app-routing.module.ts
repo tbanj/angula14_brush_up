@@ -8,7 +8,13 @@ import { StatusComponent } from './status/status.component';
 
 // routes use
 const routes: Routes = [
+  // without redirect
+  // {path: "home", component: HomeComponent},
+
+  // with redirect
   {path: "home", component: HomeComponent},
+  { path: '',   redirectTo: '/home', pathMatch: 'full' }, // redirect to
+
   {path: "about", component: AboutComponent},
   {path: "contact", component: ContactComponent, children: [
     {path: "add", component: AddcontactComponent},

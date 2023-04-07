@@ -2,8 +2,42 @@
 
 <h2>{{ headerName | lowercase }}</h2>
 <br />
-<h2>My salary is {{ salary | currency : "EUR" }}</h2>
+<h2 [style.color]="colorName" [style.font-size]="font">
+  My salary is {{ salary | currency : "EUR" }}
+</h2>
 <br />
 <h2>My salary percent is {{ salaryPercent | percent }}</h2>
 <br />
 <button (click)="FunctionClick('Wahab')">Click Me</button>
+
+<br />
+<br />
+<div style="display: flex; flex-direction: column">
+  <!-- event binding -->
+  <input #txt (change)="FunctionClick(txt.value)" type="text" />
+  <br />
+  <!-- property binding -->
+  <input
+    [disabled]="isDisabled"
+    #txt
+    (change)="FunctionClick(txt.value)"
+    type="text"
+  />
+
+  <br />
+  <!-- multiple property binding -->
+  <input
+    [value]="isDisabled"
+    [disabled]="isDisabled"
+    #txt
+    (change)="FunctionClick(txt.value)"
+    type="text"
+  />
+
+  <!-- 2 way binding, you need to import form module -->
+  <input
+    [(ngModel)]="headerName"
+    (change)="FunctionClick(txt.value)"
+    type="text"
+  />
+</div>
