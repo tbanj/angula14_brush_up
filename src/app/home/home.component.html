@@ -1,2 +1,9 @@
 <!-- <h2>Welcome to Maja World</h2> -->
-{{ headerName }}
+
+<h2>{{ headerName | lowercase }}</h2>
+<br />
+<h2>My salary is {{ salary | currency : "EUR" }}</h2>
+<br />
+<h2>My salary percent is {{ salaryPercent | percent }}</h2>
+<br />
+<button (click)="FunctionClick('Wahab')">Click Me</button>
