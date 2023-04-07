@@ -2,6 +2,17 @@
 
 <h2>{{ headerName | lowercase }}</h2>
 <br />
+
+<!-- below are ngClass directives which also known as
+css class propertybinding which accept strings input-->
+<h2 [ngClass]="classname">ngClass directives Where you dey</h2>
+
+<!-- below are ngStyle directives which also known as
+css style property binding which accept object input-->
+<h2 [ngStyle]="stylevalue">ngStyle directives Where you dey</h2>
+
+<!-- below are NgStyle directives which also known as
+style binding -->
 <h2 [style.color]="colorName" [style.font-size]="font">
   My salary is {{ salary | currency : "EUR" }}
 </h2>
