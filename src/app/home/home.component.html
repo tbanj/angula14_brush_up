@@ -5,11 +5,25 @@
 
 <!-- below are ngClass directives which also known as
 css class propertybinding which accept strings input-->
-<h2 [ngClass]="classname">ngClass directives Where you dey</h2>
+<h2 [ngClass]="classname">ngClass Attribute directives Where you dey</h2>
 
 <!-- below are ngStyle directives which also known as
 css style property binding which accept object input-->
-<h2 [ngStyle]="stylevalue">ngStyle directives Where you dey</h2>
+<h2 [ngStyle]="stylevalue">ngStyle Attribute directives Where you dey</h2>
+
+<!-- STRUCTURAL Directives 
+    we have *ngIf, *ngFor, *ngSwitch
+-->
+<h2>STRUCTURAL Directives {{ "we have *ngIf, *ngFor, *ngSwitch" }}</h2>
+<h2 *ngIf="salary > 0">
+  {{ "*ngIf will only show when salary >0." }} Current salary is
+  {{ salary | currency : "USD" }}
+</h2>
+<br />
+
+<ul>
+  <li *ngFor="let item of colors">{{ item }}</li>
+</ul>
 
 <!-- below are NgStyle directives which also known as
 style binding -->

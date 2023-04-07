@@ -16,7 +16,9 @@ export class HomeComponent implements OnInit {
   salaryPercent =0.35;
   isDisabled = true;
   classname = "test-ngclass"
-  stylevalue ={"color": "blue", "font-weight": '800'}
+  stylevalue ={"color": "blue", "font-weight": '800'};
+
+  colors= ["red", "green", "yellow", "black"];
   /* 
   pipes is use with interpolation for data  formatting in .html file
   pipes symbol is |
