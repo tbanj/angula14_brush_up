@@ -1,3 +1,4 @@
+import { MaterialModule } from './../../Material-Module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -11,7 +12,8 @@ import { RegisterComponent } from './register/register.component';
   ],
   imports: [
     CommonModule,
-    AccessRoutingModule
+    AccessRoutingModule,
+    MaterialModule,
   ]
 })
 export class AccessModule { }

@@ -305,7 +305,7 @@
 </style>
 
 <!-- Toolbar -->
-<div class="toolbar" role="banner">
+<div class="toolbar" role="banner" *ngIf="isMenuVisible">
   <img
     width="40"
     alt="Angular Logo"
@@ -319,8 +319,8 @@
 
   <!-- once you make use of lazy loading, you have to write th
   full route part if the component is on child module -->
-  <a routerLink="login">Login</a>
-  <a routerLink="access/register">Register</a>
+  <!-- (click)="logout()" -->
+  <a routerLink="login">Logout</a>
 
   <!-- if you make use of child module without lazyloading -->
   <!-- <a routerLink="register">Register</a> -->

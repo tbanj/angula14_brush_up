@@ -5,11 +5,11 @@
     <form
       class="example-form"
       #loginForm="ngForm"
-      (submit)="proceedLogin(loginform.value)"
+      (submit)="proceedLogin(loginForm)"
     >
       <mat-form-field class="example-full-width">
-        <mat-label>Username</mat-label>
-        <input matInput placeholder="Username" name="username" />
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="Email" name="email" ngModel required />
       </mat-form-field>
 
       <mat-form-field class="example-full-width">
@@ -19,19 +19,23 @@
           placeholder="Password"
           name="password"
           type="password"
+          ngModel
+          required
         />
       </mat-form-field>
+
+      <div>
+        <button mat-raised-button type="submit" color="primary">Login</button>
+        <button
+          mat-raised-button
+          style="background-color: red; margin: 5px"
+          type="button"
+          color="accent"
+          (click)="registerUser()"
+        >
+          Register
+        </button>
+      </div>
     </form>
-    <div>
-      <button mat-raised-button type="submit" color="primary">Login</button>
-      <button
-        mat-raised-button
-        style="background-color: red; margin: 5px"
-        type="button"
-        color="accent"
-      >
-        Register
-      </button>
-    </div>
   </mat-card-content>
 </mat-card>
