@@ -1,1 +1,46 @@
-<p>register works!</p>
+<mat-card>
+  <mat-card-title>User Registration</mat-card-title>
+
+  <mat-card-content>
+    <form
+      class="example-form"
+      [formGroup]="reactiveForm"
+      (ngSubmit)="saveUser()"
+    >
+      <mat-form-field class="example-full-width">
+        <mat-label>First Name</mat-label>
+        <input matInput placeholder="First Name" />
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Last Name</mat-label>
+        <input matInput placeholder="Last Name" type="text" />
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="Email" />
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Password</mat-label>
+        <input matInput placeholder="Password" type="password" />
+      </mat-form-field>
+
+      <div>
+        <button mat-raised-button type="submit" color="primary">
+          Register
+        </button>
+        <button
+          mat-raised-button
+          style="background-color: red; margin: 5px"
+          type="button"
+          color="accent"
+          (click)="loginUser()"
+        >
+          Close
+        </button>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>
