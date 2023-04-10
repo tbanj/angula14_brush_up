@@ -9,7 +9,7 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
 
-  ProceedLogin(inputData: any) {
+  proceedLogin(inputData: any) {
     return this.http.post(' http://localhost:6004/user/accounts/login', inputData)
     
   }

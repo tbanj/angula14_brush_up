@@ -24,4 +24,8 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  proceedLogin(loginData: any) {
+    console.warn('proceedLogin', loginData);
+    
+  }
 }

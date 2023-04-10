@@ -2,7 +2,11 @@
   <mat-card-title>User login</mat-card-title>
 
   <mat-card-content>
-    <form class="example-form" #loginForm="ngForm">
+    <form
+      class="example-form"
+      #loginForm="ngForm"
+      (submit)="proceedLogin(loginform.value)"
+    >
       <mat-form-field class="example-full-width">
         <mat-label>Username</mat-label>
         <input matInput placeholder="Username" name="username" />
