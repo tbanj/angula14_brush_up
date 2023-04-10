@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MaterialModule } from 'src/Material-Module';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,7 @@ import { MaterialModule } from 'src/Material-Module';
   But if it's not standalone we need to import it into
     app.module.ts file of the import section
   */
-  imports: [CommonModule, MaterialModule],
+  imports: [CommonModule, MaterialModule, FormsModule],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
