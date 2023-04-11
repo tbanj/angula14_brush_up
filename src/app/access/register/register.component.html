@@ -9,22 +9,32 @@
     >
       <mat-form-field class="example-full-width">
         <mat-label>First Name</mat-label>
-        <input matInput placeholder="First Name" />
+        <input matInput placeholder="First Name" formControlName="firstName" />
       </mat-form-field>
 
       <mat-form-field class="example-full-width">
         <mat-label>Last Name</mat-label>
-        <input matInput placeholder="Last Name" type="text" />
+        <input
+          matInput
+          placeholder="Last Name"
+          type="text"
+          formControlName="lastName"
+        />
       </mat-form-field>
 
       <mat-form-field class="example-full-width">
         <mat-label>Email</mat-label>
-        <input matInput placeholder="Email" />
+        <input matInput placeholder="Email" formControlName="email" />
       </mat-form-field>
 
       <mat-form-field class="example-full-width">
         <mat-label>Password</mat-label>
-        <input matInput placeholder="Password" type="password" />
+        <input
+          matInput
+          placeholder="Password"
+          type="password"
+          formControlName="password"
+        />
       </mat-form-field>
 
       <div>

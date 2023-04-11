@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 
 import { AccessRoutingModule } from './access-routing.module';
 import { RegisterComponent } from './register/register.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -14,6 +15,7 @@ import { RegisterComponent } from './register/register.component';
     CommonModule,
     AccessRoutingModule,
     MaterialModule,
+    ReactiveFormsModule,
   ]
 })
 export class AccessModule { }
