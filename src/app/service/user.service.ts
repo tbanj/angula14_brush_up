@@ -21,4 +21,8 @@ export class UserService {
   getToken() {
     return (localStorage.getItem('token') !== null) ? localStorage.getItem('token') :"";
   }
+
+  initiateRegister(inputData: any) {
+    return this.http.post('http://localhost:6004/user/accounts', inputData);
+  }
 }

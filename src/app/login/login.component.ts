@@ -29,29 +29,31 @@ export class LoginComponent implements OnInit {
 
   respData: any;
 
-  proceedLogin(loginData: any): void {
+  proceedLogin(loginData: any){
     console.warn(loginData.valid);
     console.warn('proceedLogin', loginData.value);
     if (loginData.valid) {
-      this.service.proceedLogin(loginData.value).subscribe((item)=>{
-        this.respData = item;
-        console.warn('server data', this.respData);
-        if (this?.respData != null) {
+      this.service.proceedLogin(loginData.value).subscribe({
+        next: (item: any)=>{
+          this.respData = item;
           console.warn('server data', this.respData);
-            localStorage.setItem('token', this.respData?.data?.token);
-            this.route.navigate(['home']);
-        }
-        // else {
-        //   // console.warn('error', this.respData);
-        //   // const {message} = this.respData?.error;
-        //     alert("failed");
-        // }
-        
-      }, (error) => {
-        // console.log(error.response);
-        console.log('data', error.error.error.message);
-        alert(error.error.error.message);
-      })
+          if (this?.respData != null) {
+            console.warn('server data', this.respData);
+              localStorage.setItem('token', this.respData?.data?.token);
+              this.route.navigate(['home']);
+          }
+          // else {
+          //   // console.warn('error', this.respData);
+          //   // const {message} = this.respData?.error;
+          //     alert("failed");
+          // }
+          
+        },
+      error: (e: any) =>{
+        alert(e.error.error.message)
+        console.error(e.error.error.message)},
+      complete: () => console.info('complete') 
+    })
     }
   }
 
