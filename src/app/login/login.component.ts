@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
 
   proceedLogin(loginData: any){
     console.warn(loginData.valid);
-    console.warn('proceedLogin', loginData.value);
+    console.warn('proceedLogin', loginData);
     if (loginData.valid) {
       this.service.proceedLogin(loginData.value).subscribe({
         next: (item: any)=>{
