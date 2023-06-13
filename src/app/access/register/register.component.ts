@@ -30,24 +30,45 @@ export class RegisterComponent implements OnInit {
   addStaticData(data: any): void {
     return {
       ...data,
-      "lastName":"Stephen", 
       "dob": "2020-08-24", 
+      "phone": "08074551280",
     }
   };
 
   saveUser() {
     console.warn('saveUser', this.reactiveForm.value);
     if (this.reactiveForm.valid) {
+      console.warn('this.reactiveForm.value', this.reactiveForm.value);
+      
         const serverData: any = this.addStaticData(this.reactiveForm.value);
         this.service.initiateRegister(serverData).subscribe({
           next: (data: any) => {
-            console.warn(data);
-            
+            console.warn('next-data', data);
+            this.route.navigate(['home']);
           },
           error: (error: any) =>{},
           complete: () => console.info('complete') 
         }) 
     }
+
+    /* if (loginData.valid) {
+      this.service.proceedLogin(loginData.value).subscribe({
+        next: (item: any)=>{
+          this.respData = item;
+          console.warn('server data', this.respData);
+          if (this?.respData != null) {
+              console.warn('server data', this.respData);
+              localStorage.setItem('token', this.respData?.data?.token);
+              this.route.navigate(['home']);
+          }
+          
+        },
+      error: (e: any) =>{
+        alert(e.error.error.message)
+        console.error(e.error.error.message)},
+      complete: () => console.info('complete') 
+    })
+    } */
   }
 
 

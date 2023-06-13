@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
           this.respData = item;
           console.warn('server data', this.respData);
           if (this?.respData != null) {
-            console.warn('server data', this.respData);
+              console.warn('server data', this.respData);
               localStorage.setItem('token', this.respData?.data?.token);
               this.route.navigate(['home']);
           }
