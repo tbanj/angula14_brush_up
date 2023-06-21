@@ -69,10 +69,12 @@ export class RegisterComponent implements OnInit {
         this.service.initiateRegister(serverData).subscribe(
         {next: (data: any) => {
                     console.warn('next-data', data);
-                    alert('check your mail to verify use and use postman')
+                    alertify.success("check your mail to verify use and use postman")
                     this.route.navigate(['login']);
                   },
-                  error: (error: any) =>{ console.error('error', error?.error?.error?.message);
+                  error: (error: any) =>{ 
+                    alertify.error(error?.error?.error?.message)
+                    console.error('error', error?.error?.error?.message);
                   },
                   complete: () => console.info('complete') 
                 }

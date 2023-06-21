@@ -1,3 +1,4 @@
+import { MaterialModule } from './../Material-Module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -13,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // import { AccessRoutingModule } from './access/access-routing.module';
 import { HttpClientModule } from "@angular/common/http";
+import { UserComponent } from './user/user.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +22,8 @@ import { HttpClientModule } from "@angular/common/http";
     AboutComponent,
     ContactComponent,
     StatusComponent,
-    AddcontactComponent
+    AddcontactComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +31,7 @@ import { HttpClientModule } from "@angular/common/http";
     FormsModule,
     BrowserAnimationsModule,
     HttpClientModule,
-
+    MaterialModule,
     // LoginComponent is an example of standalone component
     // LoginComponent,
     /* 
