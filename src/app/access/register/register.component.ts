@@ -16,6 +16,8 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  respData: any;
+
   loginUser(): void {
     this.route.navigate(['login']);
   }
@@ -35,41 +37,50 @@ export class RegisterComponent implements OnInit {
     }
   };
 
-  saveUser() {
-    console.warn('saveUser', this.reactiveForm.value);
-    if (this.reactiveForm.valid) {
-      console.warn('this.reactiveForm.value', this.reactiveForm.value);
-      
-        const serverData: any = this.addStaticData(this.reactiveForm.value);
-        this.service.initiateRegister(serverData).subscribe({
-          next: (data: any) => {
-            console.warn('next-data', data);
-            this.route.navigate(['home']);
-          },
-          error: (error: any) =>{},
-          complete: () => console.info('complete') 
-        }) 
-    }
+  
 
-    /* if (loginData.valid) {
-      this.service.proceedLogin(loginData.value).subscribe({
-        next: (item: any)=>{
+  // saveUser() {
+  //   console.warn('saveUser', this.reactiveForm.value);
+  //   if (this.reactiveForm.valid) { 
+  //     console.warn('this.reactiveForm.value', this.reactiveForm.value);
+      
+  //       const serverData: any = this.addStaticData(this.reactiveForm.value);
+  //       this.service.initiateRegister(serverData).subscribe({
+  //         next: (data: any) => {
+  //           console.warn('next-data', data);
+  //           alert('check your mail to verify use and use postman')
+  //           this.route.navigate(['login']);
+  //         },
+  //         error: (error: any) =>{},
+  //         complete: () => console.info('complete') 
+  //       }) 
+  //   }
+
+    
+  // }
+
+    saveUser() {
+      if(this.reactiveForm.valid) {
+        const serverData: any = this.addStaticData(this.reactiveForm.value);
+        this.service.initiateRegister(serverData).subscribe(
+          /* (item)=>{
           this.respData = item;
-          console.warn('server data', this.respData);
-          if (this?.respData != null) {
-              console.warn('server data', this.respData);
-              localStorage.setItem('token', this.respData?.data?.token);
-              this.route.navigate(['home']);
-          }
+          console.warn('this.respData.result', this.respData);
           
-        },
-      error: (e: any) =>{
-        alert(e.error.error.message)
-        console.error(e.error.error.message)},
-      complete: () => console.info('complete') 
-    })
-    } */
-  }
+          if(this.respData.result){}
+        } */
+        {next: (data: any) => {
+                    console.warn('next-data', data);
+                    alert('check your mail to verify use and use postman')
+                    this.route.navigate(['login']);
+                  },
+                  error: (error: any) =>{ console.error('error', error?.error?.error?.message);
+                  },
+                  complete: () => console.info('complete') 
+                }
+        );
+      }
+    }
 
 
 }
