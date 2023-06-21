@@ -3,6 +3,10 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/service/user.service';
 
+
+import * as alertify from 'alertifyjs';
+
+ 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -63,12 +67,6 @@ export class RegisterComponent implements OnInit {
       if(this.reactiveForm.valid) {
         const serverData: any = this.addStaticData(this.reactiveForm.value);
         this.service.initiateRegister(serverData).subscribe(
-          /* (item)=>{
-          this.respData = item;
-          console.warn('this.respData.result', this.respData);
-          
-          if(this.respData.result){}
-        } */
         {next: (data: any) => {
                     console.warn('next-data', data);
                     alert('check your mail to verify use and use postman')
